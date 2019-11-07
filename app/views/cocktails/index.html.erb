@@ -6,8 +6,7 @@
     </div>
   </div>
 </div>
-
-<%= link_to "Add new cocktail", new_cocktail_path %>
+<button type="button" class="btn btn-dark"><%= link_to "Add new cocktail", new_cocktail_path %></button>
 <div class="col-sm-4 col-md-4 col-lg-4 text-center">
   <% @cocktails.each do |cocktail| %>
   <div class="cards">
