@@ -1,0 +1,27 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= 'https://res.cloudinary.com/adzephirum/image/upload/v1573135200/bottles_g9fkzq.jpg' %>');">
+  <div class="container d-flex justify-content-center">
+    <div>
+      <h1>Tilt</h1>
+      <h2>Cocktail manager</h2>
+    </div>
+  </div>
+</div>
+
+<%= link_to "Add new cocktail", new_cocktail_path %>
+<div class="col-sm-4 col-md-4 col-lg-4 text-center">
+  <% @cocktails.each do |cocktail| %>
+  <div class="cards">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <%= link_to cocktail.name, cocktail_path(cocktail) %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="https://www.instagram.com/bartilt.sinchon/?hl=fr"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/bartilt.kr/"><i class="fab fa-facebook"></i></a>
+  </div>
+</div>
