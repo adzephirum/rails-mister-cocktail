@@ -1,19 +1,17 @@
+<div class="container">
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
 
-      <h1>Tilt</h1>
-      <h2>Cocktail manager</h2>
-
-<%= link_to "Add new cocktail", new_cocktail_path %>
-<% @cocktails.each do |cocktail| %>
-<%= link_to cocktail.name, cocktail_path(cocktail) %>
-
-      <% end %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/500x400/?cocktail');">
+      <h2><%= cocktail.name %></h2>
+    <p><%= link_to "Details", cocktail_path(cocktail) %></p>
+    </div>
 
 
-<!--
-<div class="footer">
-  <div class="footer-links">
-    <a href="https://www.instagram.com/bartilt.sinchon/?hl=fr"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/bartilt.kr/"><i class="fab fa-facebook"></i></a>
+    <% end %>
+
   </div>
 </div>
- -->
+
+
+

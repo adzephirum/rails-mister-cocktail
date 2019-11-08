@@ -14,8 +14,32 @@
   </head>
 
   <body>
+
+
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+      <%= link_to cocktails_path, class: "navbar-brand" do %>
+      <div class="logo"><%= image_tag "logotilt.png" %>
+      <h3 class="ml-3">Tilt Cocktail manager</h3></div>
+      <% end %>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse">
+        <%= link_to "Create a cocktail", new_cocktail_path, class: "btn btn-flat" %>
+      </div>
+    </div>
+
     <%= yield %>
     <%= javascript_include_tag "application" %>
     <%= javascript_pack_tag "application" %>
+
+    <div class="footer">
+      <div class="footer-links">
+        <a href="https://www.instagram.com/bartilt.sinchon/?hl=fr"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/bartilt.kr/"><i class="fab fa-facebook"></i></a>
+      </div>
+    </div>
   </body>
   </html>
