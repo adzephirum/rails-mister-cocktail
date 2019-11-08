@@ -1,15 +1,10 @@
-<div class="row">
-  <div class="col-lg-12 text-center">
-    <h1>Add a new ingredient to <%= @cocktail.name %></h1>
-    <%= link_to "Back to cocktail", cocktail_path(@cocktail) %>
-  </div>
-</div>
-<div class="row">
-  <div class="form-width text-center">
-    <%= simple_form_for [@cocktail, @dose] do |f| %>
-    <%= f.association :ingredient %>
-    <%= f.input :description %>
-    <%= f.submit "Save", class: "btn" %>
-    <% end %>
-  </div>
-</div>
+<h1>Add a new ingredient to <%= @cocktail.name %></h1>
+<%= link_to "Back to cocktail", cocktail_path(@cocktail) %>
+
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+<%= f.association :ingredient %>
+<%= f.input :description %>
+<%= f.submit "Save", class: "btn" %>
+<% end %>
+
