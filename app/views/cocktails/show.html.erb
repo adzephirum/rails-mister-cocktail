@@ -3,7 +3,8 @@
 <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
 <% @cocktail.doses.each do |dose| %>
 <h2> <%=  dose.ingredient.name %> | <%= dose.description %> </h2>
-<p><%= link_to 'Delete Dose', cocktail_doses_path(@cocktail), :class =>"fa fa-trash destroy_dose", method: :delete, data: { confirm: 'Are you sure?' } %> </p>
+<p><%= link_to 'Delete Dose', dose_path(dose), :class =>"fa fa-trash destroy_dose", method: :delete, data: { confirm: 'Are you sure?' } %> </p>
 <hr>
 <% end %>
 <%= link_to "Add a Dose", new_cocktail_dose_path(@cocktail), :class =>"cocktail-button btn" %>
+<!-- cocktail_doses_path(@dose.cocktail) -->
