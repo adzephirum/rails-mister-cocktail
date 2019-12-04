@@ -1,22 +1,17 @@
 <div class="container">
   <div class="cards">
     <% @cocktails.each do |cocktail| %>
-
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=
      if cocktail.photo.file
        cl_image_path cocktail.photo, height: 500, width: 500, crop: :fill
      end
      %>');">
-     <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
-     <p><%= link_to 'Edit', edit_cocktail_path(cocktail) %></p>
-     <p><%= link_to 'Destroy', cocktail_path(cocktail), method: :delete, data: { confirm: 'Are you sure?' } %></p>
-   </div>
-
-
-   <% end %>
-
- </div>
+      <div class="card-category-infos">
+        <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+        <p><%= link_to 'Edit', edit_cocktail_path(cocktail) %></p>
+        <p><%= link_to 'Destroy', cocktail_path(cocktail), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>
-
-
-
