@@ -1,14 +1,23 @@
 <div id="container-ingredients">
-<div class="col-12 col-sm-8">
+    <div class="ingredients">
+        
 
-<h1><%= @cocktail.name %></h1>
-<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
-<% @cocktail.doses.each do |dose| %>
-<h2> <%=  dose.ingredient.name %> | <%= dose.description %> </h2>
-<p><%= link_to 'Delete an ingredient', dose_path(dose), :class =>"fa fa-trash destroy_dose", method: :delete, data: { confirm: 'Are you sure?' } %> </p>
-<hr>
-<% end %>
-<%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail), :class =>"cocktail-button btn" %>
+            <h1><%= @cocktail.name %></h1>
+            <br>
+            <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+            <br>
+            <h2>Ingredients and decription</h2> 
+            <br>
+            <% @cocktail.doses.each do |dose| %>
+            <p class="list"> <%= dose.ingredient.name %> | <%= dose.description %> <%= link_to '', dose_path(dose), :class =>"fa fa-trash destroy_dose", method: :delete, data: { confirm: 'Are you sure?' } %>  </p>
+            <br>
+            <% end %>
+            
+            <a id="add-ingredient"><%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail), :class =>"button is-rounded", :id=>"add-ingredient" %></a>
+            
+            <br>
+            <br>
 <!-- cocktail_doses_path(@dose.cocktail) -->
-</div>
+       
+    </div>
 </div>
